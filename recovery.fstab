@@ -10,7 +10,7 @@
 /vendor_image       emmc      /dev/block/bootdevice/by-name/vendor             flags=flashimg=1
 /product_image      emmc      /dev/block/bootdevice/by-name/product            flags=flashimg=1;display="Product Image"
 
-/data               f2fs      /dev/block/bootdevice/by-name/userdata           flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0;metadata_encryption=aes-256-xts:wrappedkey_v0;keydirectory=/metadata/vold/metadata_encryption
+/data               f2fs      /dev/block/bootdevice/by-name/userdata           flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0;metadata_encryption=aes-256-xts:wrappedkey_v0;keydirectory=/metadata/vold/metadata_encryption,metadata_encryption=aes-256-xts
 /metadata           ext4      /dev/block/bootdevice/by-name/omr                flags=backup=0;display=Metadata
 /cache              ext4      /dev/block/bootdevice/by-name/cache              flags=backup=0;display=Cache
 
@@ -26,3 +26,5 @@
 
 /external_sd        auto      /dev/block/mmcblk0p1                             flags=display="Micro SD card";storage;wipeingui;removable
 /usb-otg	    auto      /dev/block/sde1                                  flags=display="USB OTG";storage;wipeingui;removable
+
+/firmware           vfat      /dev/block/bootdevice/by-name/apnhlos            flags=display="Firmware";mounttodecrypt
