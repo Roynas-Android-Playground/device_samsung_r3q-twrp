@@ -19,3 +19,6 @@
 
 /vbmeta_samsung     emmc      /dev/block/bootdevice/by-name/vbmeta_samsung     flags=display="Vbmeta Samsung";flashimg=1
 /vbmeta_system      emmc      /dev/block/bootdevice/by-name/vbmeta_system      flags=display="Vbmeta System";flashimg=1
+
+/external_sd        auto      /dev/block/mmcblk0p1                             flags=display="Micro SD card";storage;wipeingui;removable
+/usb-otg	    auto      /dev/block/sde1                                  flags=display="USB OTG";storage;wipeingui;removable
