@@ -1,20 +1,21 @@
-/boot               emmc      /dev/block/bootdevice/by-name/boot               flags=display=boot
-/recovery           emmc      /dev/block/bootdevice/by-name/recovery           flags=display=recovery
-/                   ext4      /dev/block/bootdevice/by-name/system             flags=display=
-/data               f2fs      /dev/block/bootdevice/by-name/userdata           flags=display=data
-/cache              ext4      /dev/block/bootdevice/by-name/cache              flags=display=cache
-/sdcard             sdfat     /dev/block/mmcblk0p1                             flags=display=sdcard
-/efs                ext4      /dev/block/bootdevice/by-name/sec_efs            flags=display=efs
-/sec_efs            ext4      /dev/block/bootdevice/by-name/sec_efs            flags=display=sec_efs
-/carrier            ext4      /dev/block/bootdevice/by-name/carrier            flags=display=carrier
-/modem              emmc      /dev/block/bootdevice/by-name/apnhlos            flags=display=modem
-/mdm                emmc      /dev/block/bootdevice/by-name/modem              flags=display=mdm
-/dsp                emmc      /dev/block/bootdevice/by-name/dsp                flags=display=dsp
-/vendor             ext4      /dev/block/bootdevice/by-name/vendor             flags=display=vendor
-/product            ext4      /dev/block/bootdevice/by-name/product            flags=display=product
-/misc               emmc      /dev/block/bootdevice/by-name/misc               flags=display=misc
-/keydata            ext4      /dev/block/bootdevice/by-name/keydata            flags=display=keydata
-/keyrefuge          ext4      /dev/block/bootdevice/by-name/keyrefuge          flags=display=keyrefuge
-/dtbo               emmc      /dev/block/bootdevice/by-name/dtbo               flags=display=dtbo
-/vbmeta_samsung     emmc      /dev/block/bootdevice/by-name/vbmeta_samsung     flags=display=vbmeta_samsung
-/vbmeta_system      emmc      /dev/block/bootdevice/by-name/vbmeta_system      flags=display=vbmeta_system
+/boot               emmc      /dev/block/bootdevice/by-name/boot               flags=backup=1;flashimg=1
+/recovery           emmc      /dev/block/bootdevice/by-name/recovery           flags=backup=1;flashimg=1
+/dtbo               emmc      /dev/block/bootdevice/by-name/dtbo               flags=backup=1;flashimg=1;display=DTBO
+
+/system             ext4      /dev/block/bootdevice/by-name/system             flags=flashimg=1
+/vendor             ext4      /dev/block/bootdevice/by-name/vendor             flags=flashimg=1
+/product            ext4      /dev/block/bootdevice/by-name/product            flags=flashimg=1
+
+/data               f2fs      /dev/block/bootdevice/by-name/userdata           flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0;metadata_encryption=aes-256-xts:wrappedkey_v0;keydirectory=/metadata/vold/metadata_encryption
+/metadata           ext4      /dev/block/bootdevice/by-name/omr                flags=backup=0;display=Metadata
+/cache              ext4      /dev/block/bootdevice/by-name/cache              flags=backup=0;display=Cache
+
+/efs                ext4      /dev/block/bootdevice/by-name/efs                flags=display=EFS;fsflags=ro
+/sec_efs            ext4      /dev/block/bootdevice/by-name/sec_efs            flags=display="Sec EFS";fsflags=ro
+
+/dsp                ext4      /dev/block/bootdevice/by-name/dsp                flags=display=DSP
+/keydata            ext4      /dev/block/bootdevice/by-name/keydata            flags=display=Keydata;wipeingui
+/keyrefuge          ext4      /dev/block/bootdevice/by-name/keyrefuge          flags=display=Keyrefuge;wipeingui
+
+/vbmeta_samsung     emmc      /dev/block/bootdevice/by-name/vbmeta_samsung     flags=display="Vbmeta Samsung";flashimg=1
+/vbmeta_system      emmc      /dev/block/bootdevice/by-name/vbmeta_system      flags=display="Vbmeta System";flashimg=1
