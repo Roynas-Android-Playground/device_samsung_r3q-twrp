@@ -9,14 +9,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+# Inherit some common TWRP stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from r3q device
 $(call inherit-product, device/samsung/r3q/device.mk)
 
 PRODUCT_DEVICE := r3q
-PRODUCT_NAME := omni_r3q
+PRODUCT_NAME := twrp_r3q
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-A908N
 PRODUCT_MANUFACTURER := samsung
