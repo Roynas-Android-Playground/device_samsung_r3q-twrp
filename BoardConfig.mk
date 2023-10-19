@@ -91,6 +91,8 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_RESETPROP := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
+TW_MAX_BRIGHTNESS := 365
+TW_DEFAULT_BRIGHTNESS := 120
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 
 # Props
