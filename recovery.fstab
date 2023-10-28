@@ -27,4 +27,4 @@
 /external_sd        auto      /dev/block/mmcblk0p1                             flags=display="Micro SD card";storage;wipeingui;removable
 /usb-otg	    auto      /dev/block/sde1                                  flags=display="USB OTG";storage;wipeingui;removable
 
-/firmware           vfat      /dev/block/bootdevice/by-name/apnhlos            flags=display="Firmware";mounttodecrypt
+/firmware           vfat      /dev/block/bootdevice/by-name/apnhlos            flags=display="Firmware"
