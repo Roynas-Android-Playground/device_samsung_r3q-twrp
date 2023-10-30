@@ -101,7 +101,8 @@ TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_MAX_BRIGHTNESS := 365
 TW_DEFAULT_BRIGHTNESS := 120
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-
+TW_INCLUDE_PYTHON := true
+TW_EXCLUDE_APEX := true
 TW_Y_OFFSET := 100
 TW_H_OFFSET := -100
 
