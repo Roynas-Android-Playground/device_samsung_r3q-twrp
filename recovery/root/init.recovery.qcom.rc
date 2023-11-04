@@ -39,5 +39,8 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
+on boot    
+    start health-hal-2-0
+
 on property:ro.build.version.security_patch=*
     setprop ro.vendor.build.security_patch ${ro.build.version.security_patch}
